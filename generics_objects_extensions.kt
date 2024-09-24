@@ -9,7 +9,7 @@ enum class Difficulty {
 }
 
 data class Question<T>(
-    val question: String,
+    val questionText: String,
     val answer: T,
     val difficulty: Difficulty
 )
@@ -29,6 +29,27 @@ class Quiz : ProgressPrintable{
         println()
         println(progressText)
     }
+
+    fun printQuiz() {
+        question1.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+        question2.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+        question3.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+    }
     
 
     companion object StudentProgress {
@@ -43,5 +64,7 @@ interface ProgressPrintable {
 }
 
  fun main() {
-    Quiz().printProgressBar()
+    Quiz().apply {
+        printQuiz()
+    }
 }
