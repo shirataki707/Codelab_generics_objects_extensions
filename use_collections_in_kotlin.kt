@@ -4,15 +4,23 @@
 
 
  fun main() {
-    val solarSystem = mutableSetOf("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")   
+    val solarSystem = mutableMapOf(
+        "Mercury" to 88,
+        "Venus" to 225,
+        "Earth" to 365,
+        "Mars" to 687,
+        "Jupiter" to 4333,
+        "Saturn" to 10759,
+        "Uranus" to 30687,
+        "Neptune" to 60190
+    )
     println(solarSystem.size)
-    solarSystem.add("Pluto")
+    solarSystem["Pluto"] = 5
     println(solarSystem.size)
-    println(solarSystem.contains("Pluto"))
-
-    solarSystem.add("Pluto")
-    println(solarSystem.size)
+    println(solarSystem["Pluto"])
+    println(solarSystem.get("Theia"))
     solarSystem.remove("Pluto")
     println(solarSystem.size)
-    println(solarSystem.contains("Pluto"))
+    solarSystem["Jupiter"] = 4332
+    println(solarSystem["Jupiter"])
  }
