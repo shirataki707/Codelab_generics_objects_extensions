@@ -4,12 +4,12 @@
 
  data class Event(
     val title: String,
-    val description: String?,
-    val dayPart: DayPart,
+    val description: String? = null,
+    val daypart: Daypart,
     val durationInMinutes: Int
  )
 
- enum class DayPart {
+ enum class Daypart {
     MORNING,
     AFTERNOON,
     EVENING
@@ -24,4 +24,7 @@
         Event(title = "Watch latest DevBytes video", daypart = Daypart.AFTERNOON, durationInMinutes = 10),
         Event(title = "Check out latest Android Jetpack library", daypart = Daypart.EVENING, durationInMinutes = 45)
     )
+
+    val shortEvents = events.filter { it.durationInMinutes < 60 }
+    println("You have ${shortEvents.size} short events.")
  }
