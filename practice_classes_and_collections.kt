@@ -27,4 +27,10 @@
 
     val shortEvents = events.filter { it.durationInMinutes < 60 }
     println("You have ${shortEvents.size} short events.")
+
+    // return type will be Map<Daypart, List<Event>>
+    val eventsByDaypart = events.groupBy { it.daypart }
+    eventsByDaypart.forEach { (daypart, events) ->
+        println("$daypart: ${events.size} events")
+    }
  }
