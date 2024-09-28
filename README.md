@@ -12,3 +12,7 @@
   - object, companion objectによるシングルトン。クラスの拡張も学んだ
 - スコープ関数
   - let, applyで処理を簡潔に表現
+- Collection
+  - array, list, set, map
+- Higher-order functions
+  - forEach, map, filter, groupBy, fold, sortedBy
